@@ -28,18 +28,18 @@
         var wrong = 0;
 
         function processphrase(){
-            a = document.getElementById("phrase").value
-            b = document.getElementById("phrase_text").value
-            c = document.getElementById("result")
-            if(a == b){
-             correct=+1;
+            qw = document.getElementById("phrase").value
+            er = document.getElementById("phrase_text").value
+            res = document.getElementById("result")
+            if(qw == er){
+             correct+=1;
              alert("Access allowed");
-            c.innerHTML = "RIGHT - "+correct;
-        }
-        else{
+            res.innerHTML = "RIGHT - "+correct;
+            }
+            else{
             wrong+=1;
             alert("Access denied");
-             c.innerHTML ="WRONG - "= wrong;
+             res.innerHTML ="WRONG - "+ wrong;
         }
      }   
  </script>
