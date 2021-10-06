@@ -62,42 +62,42 @@
         var wrong = 0;
         count = 0;
 
-        function processphrase() {
-            qw = document.getElementById("phrase").value
-            er = document.getElementById("phrase_text").value
-            res = document.getElementById("result")
-            if (qw == er) {
-                correct += 1;
-                alert("Access allowed");
-                res.innerHTML = "RIGHT - " + correct;
-            }
-            else {
-                wrong += 1;
-                alert("Access denied");
-                if (wrong >= 2) {
-                    document.getElementById("processButton").onclick = function () { alert("Account Locked") }
-                }
+        function processPhrase() {
+            console.log("Getting form values")
+            secret = document.getElementById("form_secret").value
+            guess = document.getElementById("form_phrase").value
+            if (secret == guess) {
+                correct = correct + 1
+                alert("Access allowed")
+            } else {
+                wrong = wrong + 1
+                alert("Access denied")
+                if(wrong >= 2){
+                document.getElementById("processButton").onclick=function(){alert("Account Locked")}
+                }	
             }
             out = document.getElementById("result")
-            res.innerHTML = "WRONG - " + wrong;
-        }
+            out.innerHTML = "Correct Count: " + correct + " ,Wrong Count: " + wrong
 
-        function newImage() {
-            switch (count) {
-                case 0:
-                    document.getElementById("images").src = "images/Afgan Hound.jpg"
-                    count = count + 1
+        }
+        function newImage(){
+            switch(count){
+                case 0 :
+                    document.getElementById("images").src="images/panda.jpg"
+                    count = count+1
                     break;
-                case 1:
-                    document.getElementById("images").src = "images/Desert tortoise.jpg"
-                    count = count + 1
+                case 1 :
+                    document.getElementById("images").src="images/ocelot.jpg"
+                    count = count+1
                     break;
-                case 2:
-                    document.getElementById("images").src = "images/key Deer.jpg"
+                case 2 :
+                    document.getElementById("images").src="images/Ape.jpg"
                     count = 0
-                    break;
+                    break;                    
             }
         }
+
+       
     </script>
 
 </body>
