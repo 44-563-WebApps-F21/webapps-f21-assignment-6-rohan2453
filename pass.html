@@ -1,66 +1,105 @@
 <!DOCTYPE html>
 <html>
- 
-<body>
+
+<head>
     <title>pass page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <h2>pass phrase by Rohan reddy
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <style>
+        header {
+            color: palegreen;
+            background-color: gold;
+        }
 
-    </h2>
+        h2 {
+            background-color: skyblue;
+            color: thistle;
+        }
+
+        p {
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <header>pass phrase by Rohan reddy</header>
+    <h2>Getting input</h2>
     <br>
 
     <form>
-     <label for="secret_phrase">Enter the secret phrase</label>
-    <input type="password" id="phrase" value="let me in">
-    <br>
-    <br>
-    <label for="phrase_name">Enter a phrase</label>
-    <input type="text" id="phrase_text">
-    <br>
-    <br>
+        <div class="form-group" style="width: 25%;">
+            <label for="secret_phrase">Enter the secret phrase</label>
+            <input type="password" id="phrase" value="let me in">
+            <br>
+            <br>
+        </div>
+        <div class="form-group" style="width: 25%;">
+            <label for="phrase_name">Enter a phrase</label>
+            <input type="text" id="phrase_text">
+            <br>
+            <br>
+        </div>
     </form>
 
     <button class="btn btn-success" onclick="processphrase()">check the phrase</button>
     <p id="result"></p>
-    <img src="images/Afgan Hound.jpg" class="img-thumbnail" alt="Afgan Hound" onclick="newImage();" id="images" style="width: 200; height: 200;">
-
+    <div class="container">
+        <img src="images/Afgan Hound.jpg" class="img-thumbnail" alt="Afgan Hound" onclick="newImage();" id="images"
+            style="width: 200; height: 200;">
+    </div>
     <script>
         var correct = 0;
         var wrong = 0;
         count = 0;
 
-        function processphrase(){
+        function processphrase() {
             qw = document.getElementById("phrase").value
             er = document.getElementById("phrase_text").value
             res = document.getElementById("result")
-            if(qw == er){
-             correct+=1;
-             alert("Access allowed");
-            res.innerHTML = "RIGHT - "+correct;
+            if (qw == er) {
+                correct += 1;
+                alert("Access allowed");
+                res.innerHTML = "RIGHT - " + correct;
             }
-            else{
-            wrong+=1;
-            alert("Access denied");
-             res.innerHTML ="WRONG - "+ wrong;
+            else {
+                wrong += 1;
+                alert("Access denied");
+                if (wrong >= 2) {
+                    document.getElementById("processButton").onclick = function () { alert("Account Locked") }
+                }
+            }
+            out = document.getElementById("result")
+            res.innerHTML = "WRONG - " + wrong;
         }
-     }   
-     function newImage(){
-            switch(count){
-                case 0 :
-                    document.getElementById("images").src="images/Afgan Hound.jpg"
-                    count = count+1
+
+        function newImage() {
+            switch (count) {
+                case 0:
+                    document.getElementById("images").src = "images/Afgan Hound.jpg"
+                    count = count + 1
                     break;
-                case 1 :
-                    document.getElementById("images").src="images/Desert tortoise.jpg"
-                    count = count+1
+                case 1:
+                    document.getElementById("images").src = "images/Desert tortoise.jpg"
+                    count = count + 1
                     break;
-                case 2 :
-                    document.getElementById("images").src="images/key Deer.jpg"
+                case 2:
+                    document.getElementById("images").src = "images/key Deer.jpg"
                     count = 0
-                    break;                    
+                    break;
             }
         }
- </script>
+    </script>
 
 </body>
-</html> 
+
+</html>
