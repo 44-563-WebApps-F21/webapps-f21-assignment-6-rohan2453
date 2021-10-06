@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>pass page</title>
+    <title>Pass a Phrase</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,53 +14,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <style>
-        header {
-            color: palegreen;
-            background-color: gold;
-        }
-
-        h2 {
-            background-color: skyblue;
-            color: thistle;
-        }
-
-        p {
-            color: rebeccapurple;
-        }
-    </style>
+        <style>
+             header{
+                color: red;
+                background-color: gold;
+            }
+            h2{
+                background-color: skyblue;
+                color:thistle;
+            }
+            p{
+                color:rebeccapurple;
+            }
+        </style>
 </head>
 
 <body>
-    <header>pass phrase by Rohan reddy</header>
-    <h2>Getting input</h2>  
-    <br>
+    <header>Pass phrase by Rohan reddy</header>
+    <h2>Getting input</h2>
 
     <form>
         <div class="form-group" style="width: 25%;">
-            <label for="secret_phrase">Enter the secret phrase</label>
-            <input type="password" id="phrase" value="let me in">
-            <br>
-            <br>
-        </div>
-        <div class="form-group" style="width: 25%;">
-            <label for="phrase_name">Enter a phrase</label>
-            <input type="text" id="phrase_text">
-            <br>
-            <br>
-        </div>
-    </form>
-
-    <button class="btn btn-success" onclick="processphrase()">check the phrase</button>
-    <p id="result"></p>
-    <div class="container">
-        <img src="images/Afgan Hound.jpg" class="img-thumbnail" alt="Afgan Hound" onclick="newImage();" id="images"
-            style="width: 200; height: 200;">
+        <label for="form_secret" class="form-label">Enter the Secret phrase </label>
+        <input type="password" class="form-control" id="form_secret" name="form_secret" value="Let me in">
     </div>
+        <br>
+        <div class="form-group" style="width: 25%;">
+        <label for="form_phrase" class="form-label">Enter a phrase</label>
+        <input type="text" class="form-control" id="form_phrase" name="form_phrase" autofocus> <br>
+    </div>
+
+        <input type="button" onclick="processPhrase()" value="Check the phrase" id="processButton" class="btn btn-primary">
+    </form>
+    <br>
+    <p id="result" >This text will be replaced </p>
+    <br>
+
+    <div class="container">
+        <img src="images/Afgan Hound.jpg" class="img-thumbnail" alt="Afgan Hound" onclick="newImage();" id="images" style="width: 200; height: 200;">
+    </div>
+
     <script>
-        var correct = 0;
-        var wrong = 0;
-        count = 0;
+        correct = 0
+        wrong = 0
+        count = 0
 
         function processPhrase() {
             console.log("Getting form values")
@@ -77,12 +74,9 @@
                 }	
             }
             out = document.getElementById("result")
-                }	
-            
-            
             out.innerHTML = "Correct Count: " + correct + " ,Wrong Count: " + wrong
 
-        
+        }
         function newImage(){
             switch(count){
                 case 0 :
@@ -99,10 +93,7 @@
                     break;                    
             }
         }
-
-       
     </script>
-
 </body>
 
 </html>
