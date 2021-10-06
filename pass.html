@@ -22,10 +22,12 @@
 
     <button class="btn btn-success" onclick="processphrase()">check the phrase</button>
     <p id="result"></p>
+    <img src="images/Afgan Hound.jpg" class="img-thumbnail" alt="Afgan Hound" onclick="newImage();" id="images" style="width: 200; height: 200;">
 
     <script>
         var correct = 0;
         var wrong = 0;
+        count = 0;
 
         function processphrase(){
             qw = document.getElementById("phrase").value
@@ -42,6 +44,22 @@
              res.innerHTML ="WRONG - "+ wrong;
         }
      }   
+     function newImage(){
+            switch(count){
+                case 0 :
+                    document.getElementById("images").src="images/Afgan Hound.jpg"
+                    count = count+1
+                    break;
+                case 1 :
+                    document.getElementById("images").src="images/Desert tortoise.jpg"
+                    count = count+1
+                    break;
+                case 2 :
+                    document.getElementById("images").src="images/key Deer.jpg"
+                    count = 0
+                    break;                    
+            }
+        }
  </script>
 
 </body>
